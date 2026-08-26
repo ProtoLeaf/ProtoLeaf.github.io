@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="一个简洁、现代的 Markdown 博客">
-  <title>我的博客</title>
-  <link rel="stylesheet" href="../assets/css/style.css">
+  <meta name="description" content="博客文章">
+  <title>文章 · 我的博客</title>
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
 </head>
@@ -16,35 +16,20 @@
       <nav>
         <a href="index.html">首页</a>
         <a href="about.html">关于</a>
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="切换深色模式" title="切换主题">☾</button>
+        <button id="themeToggle" class="icon-btn" type="button" aria-label="切换深色模式">☾</button>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <p class="eyebrow">WELCOME TO MY BLOG</p>
-        <h1>记录想法，分享知识。</h1>
-        <p class="hero-text">这里是我的个人博客，用 Markdown 写作，让内容简单、自由地发布。</p>
-      </div>
-    </section>
-
-    <section class="container posts-section">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">LATEST POSTS</p>
-          <h2>最新文章</h2>
-        </div>
-        <label class="search-box">
-          <span>⌕</span>
-          <input id="searchInput" type="search" placeholder="搜索文章..." aria-label="搜索文章">
-        </label>
-      </div>
-
-      <div id="postList" class="post-grid" aria-live="polite"></div>
-      <div id="emptyState" class="empty-state hidden">没有找到相关文章。</div>
-    </section>
+  <main class="container article-page">
+    <article class="article">
+      <a class="back-link" href="index.html">← 返回文章列表</a>
+      <header class="article-header">
+        <h1 id="articleTitle" class="article-title">加载中…</h1>
+        <div id="articleDate" class="article-info"></div>
+      </header>
+      <div id="markdownContent" class="markdown-body">正在读取 Markdown…</div>
+    </article>
   </main>
 
   <footer class="site-footer">
