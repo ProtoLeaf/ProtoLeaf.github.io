@@ -1,7 +1,7 @@
 // ====== 博客配置 ======
 // 如果你的网站仓库就是当前 GitHub Pages 仓库，通常只需要修改这 5 项。
 window.BLOG_CONFIG = {
-  title: 'My Blog',
+  title: 'ProtoLeaf Blog',
   heroTitle: '记录想法，分享知识。',
   subtitle: '这是一个直接从 GitHub 仓库读取 Markdown 文章的静态博客。',
 
