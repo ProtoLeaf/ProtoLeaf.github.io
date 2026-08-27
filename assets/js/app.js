@@ -71,7 +71,7 @@
   }
 
   function parseFrontMatter(raw, path) {
-    const result = { title: path.split('/').pop().replace(/\.md$/i, ''), date: '', description: '', tags: [], cover: '', raw: raw.replace(/^\uFEFF/, '') };
+    const result = { path, title: path.split('/').pop().replace(/\.md$/i, ''), date: '', description: '', tags: [], cover: '', raw: raw.replace(/^\uFEFF/, '') };
     const m = result.raw.match(/^---\s*\n([\s\S]*?)\n---\s*\n?/);
     if (!m) return result;
     const fm = m[1];
@@ -212,7 +212,7 @@
       parsed.sort((a,b) => {
         const ta = new Date(a.date || 0).getTime(), tb = new Date(b.date || 0).getTime();
         const order = (cfg.sort || 'newest') === 'oldest' ? ta - tb : tb - ta;
-        return order || a.path.localeCompare(b.path);
+        return order || String(a.path || '').localeCompare(String(b.path || ''));
       });
       state.posts = parsed;
       state.filtered = [...parsed];
