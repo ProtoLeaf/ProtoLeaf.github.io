@@ -6,8 +6,8 @@ window.BLOG_CONFIG = {
   subtitle: '这是一个直接从 GitHub 仓库读取 Markdown 文章的静态博客。',
 
   // GitHub 仓库信息
-  owner: 'ProtoLeaf',
-  repo: 'ProtoLeaf.github.io',
+  owner: 'ProtoLeaf',       // 例如：your-name
+  repo: 'ProtoLeaf.github.io',        // 例如：your-name.github.io
   branch: 'main',
   postsDir: 'posts',
 
@@ -15,5 +15,5 @@ window.BLOG_CONFIG = {
   sort: 'newest',
 
   // 是否允许 Markdown 使用 HTML。安全起见建议 false。
-  allowHtml: true
+  allowHtml: false
 };
