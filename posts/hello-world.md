@@ -1,17 +1,26 @@
-# Hello World
+---
+title: Hello, Markdown Blog
+date: 2026-08-28
+description: 这是一篇示例文章，用来测试 Markdown 自动读取和渲染。
+tags: [博客, Markdown]
+---
+
+# Hello, Markdown Blog
 
 欢迎来到我的博客！
 
-这是第一篇文章，用来测试 Markdown 博客系统。
+把新的 `.md` 文件放进 `posts/` 文件夹，刷新页面后网站就会自动发现它。
 
-## 为什么使用 Markdown？
+## 代码测试
 
-Markdown 可以让我专注于写作，而不用担心复杂的网页排版。
-
-```javascript
-console.log("Hello, Blog!");
+```python
+print("Hello, GitHub Pages!")
 ```
 
-> 从这里开始，记录自己的学习、思考和生活。
+## 列表
 
-以后只需要继续在 `posts/` 文件夹中添加 Markdown 文件，就可以持续写博客了。
+- Markdown 渲染
+- 深色模式
+- 自动目录
+- 搜索文章
+- 上一篇 / 下一篇
