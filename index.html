@@ -1,44 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="博客文章">
-  <title>文章 · 我的博客</title>
-  <link rel="stylesheet" href="assets/css/style.css">
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.6/dist/purify.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="一个基于 GitHub Pages 的 Markdown 博客" />
+  <title>My Blog</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github-dark.min.css" media="(prefers-color-scheme: dark)" id="hljs-dark" disabled />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/styles/github.min.css" media="(prefers-color-scheme: light)" id="hljs-light" />
+  <script src="https://cdn.jsdelivr.net/npm/marked@15.0.7/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/dompurify@3.2.4/dist/purify.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/highlight.js@11.11.1/lib/highlight.min.js"></script>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="index.html">我的博客</a>
-      <nav>
-        <a href="index.html">首页</a>
-        <a href="about.html">关于</a>
-        <button id="themeToggle" class="icon-btn" type="button" aria-label="切换深色模式">☾</button>
+  <div class="site-shell">
+    <header class="topbar">
+      <a class="brand" href="#/" aria-label="返回首页">
+        <span class="brand-mark">M</span>
+        <span id="site-title">My Blog</span>
+      </a>
+      <nav class="nav" aria-label="主导航">
+        <a href="#/">首页</a>
+        <a href="#/about">关于</a>
       </nav>
-    </div>
-  </header>
+      <div class="toolbar">
+        <label class="search-box" aria-label="搜索文章">
+          <span>⌕</span>
+          <input id="search-input" type="search" placeholder="搜索文章…" autocomplete="off" />
+        </label>
+        <button id="theme-toggle" class="icon-button" title="切换深色模式" aria-label="切换深色模式">☾</button>
+      </div>
+    </header>
 
-  <main class="container article-page">
-    <article class="article">
-      <a class="back-link" href="index.html">← 返回文章列表</a>
-      <header class="article-header">
-        <h1 id="articleTitle" class="article-title">加载中…</h1>
-        <div id="articleDate" class="article-info"></div>
-      </header>
-      <div id="markdownContent" class="markdown-body">正在读取 Markdown…</div>
-    </article>
-  </main>
+    <main id="app" class="main-content" aria-live="polite">
+      <section class="hero" id="home-hero">
+        <p class="eyebrow">PERSONAL BLOG</p>
+        <h1 id="hero-title">记录想法，分享知识。</h1>
+        <p id="hero-subtitle">这是一个直接从 GitHub 仓库读取 Markdown 文章的静态博客。</p>
+      </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> 我的博客</span>
-      <a href="about.html">关于本站</a>
-    </div>
-  </footer>
+      <section class="content-layout">
+        <div class="content-main">
+          <div id="status" class="status-card">正在加载文章…</div>
+          <div id="post-list" class="post-list"></div>
+          <article id="post-view" class="article-card hidden"></article>
+          <section id="about-view" class="article-card hidden">
+            <p class="eyebrow">ABOUT</p>
+            <h1>关于本站</h1>
+            <p>这是一个纯前端、无需构建的 GitHub Pages 博客。把 Markdown 文件放到 <code>posts/</code> 目录后，网站会自动发现并渲染文章。</p>
+            <p>文章可以使用 YAML Front Matter 设置标题、日期、摘要、标签和封面：</p>
+            <pre><code>---\ntitle: 我的第一篇文章\ndate: 2026-08-28\ndescription: 这是摘要\ntags: [随笔, 技术]\ncover: assets/images/example.jpg\n---</code></pre>
+          </section>
+        </div>
+        <aside id="toc-panel" class="toc-panel hidden" aria-label="文章目录">
+          <div class="toc-title">目录</div>
+          <nav id="toc"></nav>
+        </aside>
+      </section>
+    </main>
+  </div>
 
+  <button id="back-top" class="back-top" title="返回顶部" aria-label="返回顶部">↑</button>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="assets/js/config.js"></script>
   <script src="assets/js/app.js"></script>
 </body>
 </html>
