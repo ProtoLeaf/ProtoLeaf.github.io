@@ -7,7 +7,7 @@ window.BLOG_CONFIG = {
 
   // GitHub 仓库信息
   owner: 'ProtoLeaf',       // 例如：your-name
-  repo: 'ProtoLeaf.github.io',        // 例如：your-name.github.io
+  repo: 'protoleaf.github.io',        // 例如：your-name.github.io
   branch: 'main',
   postsDir: 'posts',
 
